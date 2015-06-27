@@ -1,7 +1,6 @@
 package HelperMate.tasks;
 
 import org.powerbot.script.rt6.ClientContext;
-import org.powerbot.script.rt6.GameObject;
 import org.powerbot.script.rt6.Item;
 import org.powerbot.script.rt6.Skills;
 
@@ -157,8 +156,7 @@ public class Drink extends Task<ClientContext> {
 	@SuppressWarnings("deprecation")
 	@Override
 	public boolean activate() {
-		return false;
-		//return checkPot();
+		return checkPot();
 	}
 
 	@Override
@@ -170,7 +168,6 @@ public class Drink extends Task<ClientContext> {
 
 		if (pray) {
 			i = ctx.backpack.select().id(prayerPotId).first().poll();
-
 		}
 
 		i.interact("Drink");

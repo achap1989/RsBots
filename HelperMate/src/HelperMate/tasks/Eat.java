@@ -14,8 +14,7 @@ public class Eat extends Task<ClientContext> {
 
 	@Override
 	public boolean activate() {
-		return false;
-	//	return ctx.players.local().healthPercent() < setAmount;
+		return ctx.players.local().healthPercent() < setAmount;
 	}
 
 	@SuppressWarnings("deprecation")
