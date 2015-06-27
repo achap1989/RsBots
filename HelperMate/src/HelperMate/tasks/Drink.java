@@ -164,10 +164,12 @@ public class Drink extends Task<ClientContext> {
 		Item i = null;
 		if (overload) {
 			i = ctx.backpack.select().id(overloadId).first().poll();
+			Main.setStatus("Drinking Overload");
 		}
 
 		if (pray) {
 			i = ctx.backpack.select().id(prayerPotId).first().poll();
+			Main.setStatus("Drinking Prayer Potion");
 		}
 
 		i.interact("Drink");

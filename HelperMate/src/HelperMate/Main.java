@@ -84,7 +84,13 @@ public class Main extends PollingScript<ClientContext> implements PaintListener 
 		g.drawString("Prayer Pots:", 25, 75);
 		g.drawString("Monkfish:", 25, 95);
 
+		if (!getStatus().equalsIgnoreCase("Inactive"))
+			g.setColor(Color.GREEN);
+		else
+			g.setColor(Color.RED);
 		g.drawString(getStatus(), 70, 35);
+		
+		g.setColor(Color.WHITE);
 		g.drawString("" + overloadLeft, 90, 55);
 		g.drawString("" + prayerPotLeft, 100, 75);
 		g.drawString("" + foodLeft, 85, 95);

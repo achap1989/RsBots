@@ -5,8 +5,15 @@ import org.powerbot.script.rt6.Item;
 
 public class Eat extends Task<ClientContext> {
 
-	private int setAmount = (int) ((ctx.skills.CONSTITUTION * 10) * .25);
-	private int eatItemId = 520;
+	private int setAmount = (int) ((ctx.players.local().healthPercent()) * .25);
+	private int[] eatItemId = {
+			//MonkFish
+			7946, 7947, 14825,
+			//Shark
+			385, 386,
+			//Swordfish
+			373, 374, 14831
+			};
 
 	public Eat(ClientContext ctx) {
 		super(ctx);
